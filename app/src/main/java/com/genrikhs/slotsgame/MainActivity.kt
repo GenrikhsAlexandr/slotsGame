@@ -2,6 +2,9 @@ package com.genrikhs.slotsgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.children
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -17,6 +20,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val windowInsetsController =
+            WindowCompat.getInsetsController(window, window.decorView)
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+        windowInsetsController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

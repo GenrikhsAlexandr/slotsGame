@@ -61,6 +61,7 @@ class PrimaryFragment : Fragment() {
     private fun setClickListeners() {
 
         binding.buttonAutoSpin.setOnClickListener {
+            spin()
             viewModel.onAutoSpinClicked()
         }
 

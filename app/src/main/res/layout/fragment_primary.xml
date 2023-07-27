@@ -1,13 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fon2"
     tools:context=".PrimaryFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineFieldStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineFieldEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineFieldBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineFieldTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBetTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenterVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenterHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ramka"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineFieldBottom"
+        app:layout_constraintEnd_toEndOf="@id/guidelineFieldEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineFieldStart"
+        app:layout_constraintTop_toTopOf="@id/guidelineFieldTop">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/frame"
+        app:layout_constraintEnd_toEndOf="@id/frame"
+        app:layout_constraintStart_toStartOf="@id/frame"
+        app:layout_constraintTop_toTopOf="@id/frame">
+
+        <com.genrikhs.slotsgame.NotTouchableRecyclerView
+            android:id="@+id/slot1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/pole"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.genrikhs.slotsgame.NotTouchableRecyclerView
+            android:id="@+id/slot2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/pole"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.genrikhs.slotsgame.NotTouchableRecyclerView
+            android:id="@+id/slot3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/pole"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <com.genrikhs.slotsgame.NotTouchableRecyclerView
+            android:id="@+id/slot4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/pole"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/bet"
+        app:layout_constraintEnd_toEndOf="@id/guidelineFieldEnd"
+        app:layout_constraintTop_toTopOf="@id/guidelineBetTop" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonMinus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/min"
+        app:layout_constraintEnd_toEndOf="@id/guidelineFieldEnd"
+        app:layout_constraintTop_toTopOf="@id/guidelineBetTop" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonPlus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:background="@drawable/plus"
+        app:layout_constraintEnd_toEndOf="@id/guidelineFieldEnd"
+        app:layout_constraintTop_toTopOf="@id/guidelineBetTop" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textBet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/buttonPlus"
+        app:layout_constraintStart_toEndOf="@id/buttonMinus"
+        app:layout_constraintTop_toTopOf="@id/guidelineBetTop" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineCenterHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/guidelineCenterVertical"
+        app:layout_constraintStart_toStartOf="@id/guidelineStartVertical">
+
+        <ImageView
+            android:id="@+id/imageCountMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/money" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textCountMoney"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge"
+            android:textColor="@color/white" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/buttonAutoSpin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bott_autospin"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineFieldBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineFieldEnd" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/buttonSpin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/bott_spin"
+        app:layout_constraintBottom_toTopOf="@id/guidelineFieldBottom"
+        app:layout_constraintEnd_toEndOf="@id/guidelineFieldStart"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bott_back"
+        app:layout_constraintEnd_toEndOf="@id/guidelineFieldStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineCenterHorizontal" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/buttonAutoStop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/bott_stopauto"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineFieldBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineFieldEnd" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
